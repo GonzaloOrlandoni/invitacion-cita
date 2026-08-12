@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Querés salir conmigo?</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>"
+    />
+    <!-- Estilos modulares -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container" id="main-container">
+      <div
+        id="emoji-display"
+        style="
+          font-size: 8rem;
+          margin-bottom: 10px;
+          filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.15));
+          user-select: none;
+        "
+      >
+        🍷🍷
+      </div>
+
+      <h1 id="question-text">¿Querés tener una cita conmigo? 💖</h1>
+
+      <div class="buttons" id="buttons-container">
+        <button id="btn-yes">¡SÍ!</button>
+        <button id="btn-no">No</button>
+      </div>
+
+      <div id="date-picker-container">
+        <h2 style="color: #d81b60; font-size: 1.4rem; margin: 0">¡Sabía que dirías que sí! 🥰</h2>
+        <p style="margin: 0 0 10px 0; color: #555; font-size: 1rem">¿Qué día y a qué hora te paso a buscar?</p>
+        <input type="datetime-local" id="meeting-time" />
+        <button id="btn-submit">Confirmar Cita 💘</button>
+      </div>
+
+      <div id="final-message">
+        <div class="final-title">¡Tenemos una cita! 🎉</div>
+        <div
+          id="confirmed-date"
+          style="font-size: 1.4rem; color: #ff4b82; font-weight: 800; margin: 15px 0; text-transform: capitalize"
+        ></div>
+        <div class="final-subtitle">📸 Sacale captura a esta pantalla<br />y mandámela por WhatsApp</div>
+      </div>
+    </div>
+
+    <!-- Script de confeti mágico desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Script modular de la app -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
