@@ -60,11 +60,32 @@ btnSubmit.addEventListener("click", () => {
     return;
   }
 
-  // Formatear la fecha y mostrarla
+  // Formatear la fecha y mostrarla (Ej: Sábado 15 de agosto, 18:30 Hs)
   const dateObj = new Date(dateTimeInput.value);
-  const options = { weekday: "long", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" };
-  const formattedDate = dateObj.toLocaleDateString("es-ES", options);
-  document.getElementById("confirmed-date").innerText = "📅 " + formattedDate;
+  const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  const meses = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre",
+  ];
+
+  const diaSemana = dias[dateObj.getDay()];
+  const diaMes = dateObj.getDate();
+  const mes = meses[dateObj.getMonth()];
+  const hora = dateObj.getHours().toString().padStart(2, "0");
+  const minutos = dateObj.getMinutes().toString().padStart(2, "0");
+
+  const formattedDate = `${diaSemana} ${diaMes} de ${mes}, ${hora}:${minutos} Hs`;
+  document.getElementById("confirmed-date").innerText = formattedDate;
 
   // Ocultamos el selector y mostramos el mensaje final
   datePickerContainer.style.display = "none";
